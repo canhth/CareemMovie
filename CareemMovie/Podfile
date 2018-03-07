@@ -1,0 +1,26 @@
+platform :ios, '9.0'
+
+target 'CareemMovie' do
+  use_frameworks!
+
+  inherit! :search_paths
+    pod 'Alamofire' 
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RealmSwift'
+    pod 'Kingfisher', '~> 4.6'
+    pod 'KeychainAccess'
+    pod 'TPKeyboardAvoiding', '~> 1.3'
+    pod 'IQKeyboardManagerSwift'
+    pod 'AMScrollingNavbar'
+    pod 'SVProgressHUD', '2.1.2'
+    pod 'CT_RESTAPI', :path => 'LocalPods/CT_RESTAPI/'
+
+  target 'CareemMovieTests' do
+    inherit! :search_paths
+    # Pods for testing
+        pod 'Quick', '~> 1.2'
+        pod 'Nimble', '~> 7.0'
+  end
+
+end
