@@ -1,6 +1,6 @@
 //
 //  String+Extension.swift
-//  ListingRestaurant
+//  CareemMovie
 //
 //  Created by Canh Tran on 2/27/18.
 //  Copyright © 2018 Tran Hoang Canh. All rights reserved.
@@ -10,7 +10,6 @@ import Foundation
 
 
 extension String {
-    
     
     static func className(_ aClass: AnyClass) -> String {
         return NSStringFromClass(aClass).components(separatedBy: ".").last!
@@ -56,5 +55,16 @@ extension String {
             print("CANNOT FIND TRANSLATION FOR STRING \(self)")
         }
         return localizedString
+    }
+    
+    func convertDateStringToCareemFormat() -> String {
+        guard self.count > 0 else { return "" }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        guard let date = dateFormatter.date(from: self) else { return "" }
+        dateFormatter.dateFormat = "MMM dd yyyy"
+        return  dateFormatter.string(from: date)
     }
 }

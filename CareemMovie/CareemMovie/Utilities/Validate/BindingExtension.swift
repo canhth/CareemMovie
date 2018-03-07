@@ -15,7 +15,7 @@ extension ValidationResult: CustomStringConvertible {
         switch self {
         case .ok:
             return ""
-        case let .empty(_):
+        case .empty(_):
             return ""
         case let .failed(message):
             return message
@@ -41,11 +41,3 @@ extension ValidationResult {
     }
 }
 
-extension Reactive where Base: UILabel {
-    var validationResult: UIBindingObserver<Base, ValidationResult> {
-        return UIBindingObserver(UIElement: base) { label, result in
-            label.textColor = result.textColor
-            label.text = result.description
-        }
-    }
-}

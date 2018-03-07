@@ -1,6 +1,6 @@
 //
 //  UIColor+Extension.swift
-//  ListingRestaurant
+//  CareemMovie
 //
 //  Created by Canh Tran on 2/27/18.
 //  Copyright © 2018 Tran Hoang Canh. All rights reserved.
@@ -49,7 +49,9 @@ extension UIColor {
             alpha:alpha)
     }
     
-    
+    static func shadownColor() -> UIColor {
+        return UIColor(hex: "000000").withAlphaComponent(0.5)
+    }
     
 }
 

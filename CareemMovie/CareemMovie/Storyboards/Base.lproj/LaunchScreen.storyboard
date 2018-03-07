@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,22 +27,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="0jJ-LV-ZX8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="0jJ-LV-ZX8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rn-Yw-5Ul">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="1" green="0.30588235289999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Canh Tran" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW0-ZY-hwH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_decoration" translatesAutoresizingMaskIntoConstraints="NO" id="8Ay-Xn-5C7">
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Canh Tran" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW0-ZY-hwH">
                                 <rect key="frame" x="20" y="629" width="335" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2539 Media" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-ML-EWa">
-                                <rect key="frame" x="78.5" y="50" width="217.5" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="9rs-Eh-vO4">
+                                <rect key="frame" x="136.5" y="196.5" width="102" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="4BS-rb-hBx"/>
+                                    <constraint firstAttribute="height" constant="107" id="S3w-uq-mvg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Careem Movie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-ML-EWa">
+                                <rect key="frame" x="133" y="313.5" width="110.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -49,15 +56,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UW0-ZY-hwH" secondAttribute="bottom" constant="20" id="0LK-5m-yCQ"/>
-                            <constraint firstItem="HQ6-ML-EWa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Ccv-Dl-36Y"/>
-                            <constraint firstItem="6Rn-Yw-5Ul" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FSR-ys-8k1"/>
+                            <constraint firstItem="8Ay-Xn-5C7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="3NE-Ga-VxG"/>
+                            <constraint firstItem="8Ay-Xn-5C7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6yy-Vc-BJU"/>
+                            <constraint firstItem="9rs-Eh-vO4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.75" id="L6X-kZ-ItV"/>
                             <constraint firstItem="0jJ-LV-ZX8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ShB-oc-Bzh"/>
                             <constraint firstItem="0jJ-LV-ZX8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="URF-2V-FLf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UW0-ZY-hwH" secondAttribute="trailing" constant="20" id="XHp-lX-2Cv"/>
-                            <constraint firstAttribute="bottom" secondItem="6Rn-Yw-5Ul" secondAttribute="bottom" id="XLB-Kr-Uw1"/>
-                            <constraint firstAttribute="trailing" secondItem="6Rn-Yw-5Ul" secondAttribute="trailing" id="cqn-wG-4Ss"/>
-                            <constraint firstItem="6Rn-Yw-5Ul" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oa0-Wp-1BM"/>
+                            <constraint firstItem="8Ay-Xn-5C7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hfY-lo-nky"/>
+                            <constraint firstItem="HQ6-ML-EWa" firstAttribute="top" secondItem="9rs-Eh-vO4" secondAttribute="bottom" constant="10" id="hig-aA-pME"/>
+                            <constraint firstItem="8Ay-Xn-5C7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jsG-2e-b6r"/>
                             <constraint firstItem="UW0-ZY-hwH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pfB-rV-Asf"/>
+                            <constraint firstItem="9rs-Eh-vO4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rKF-V2-17x"/>
                             <constraint firstItem="HQ6-ML-EWa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rYn-2O-jbU"/>
                             <constraint firstAttribute="trailing" secondItem="0jJ-LV-ZX8" secondAttribute="trailing" id="vby-I4-xeS"/>
                             <constraint firstAttribute="bottom" secondItem="0jJ-LV-ZX8" secondAttribute="bottom" id="yhn-Zj-IoG"/>
@@ -71,6 +80,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="375" height="667"/>
+        <image name="splash_background" width="375" height="812"/>
+        <image name="splash_decoration" width="375" height="665"/>
+        <image name="splash_logo" width="102" height="107"/>
     </resources>
 </document>

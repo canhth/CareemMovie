@@ -22,18 +22,19 @@ public struct RESTContants {
     
     //MARK: Webservice url
     #if DEBUG
-        static let kDefineWebserviceUrl                     = "http://apps.experfi.com/api/"
+        static let kDefineWebserviceUrl                 = "http://api.themoviedb.org/3/"
     #else
-        static let kDefineWebserviceUrl                     = "http://apps.experfi.com/api/"
+        static let kDefineWebserviceUrl                 = "http://api.themoviedb.org/3/"
     #endif
 
-    static let kDefineWebserviceResourceUrl             = ""
-    static let kDefineWebserviceUploadImage             = "http://gameon.generdev.com/apis/updateProfilePicture.php"
+    #if DEBUG
+    static let kDefineWebserviceResourceUrl             = "http://image.tmdb.org/t/p/"
+    #else
+    static let kDefineWebserviceResourceUrl             = "http://image.tmdb.org/t/p/"
+    #endif
     
     static let headers                                  = ["Content-Type" : "application/json"]
 }
-
-
 
 public enum StatusCode: NSInteger {
     case success = 200

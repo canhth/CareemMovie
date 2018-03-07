@@ -14,6 +14,8 @@ Pod::Spec.new do |spec|
   spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
    
   spec.dependency 'RxSwift'
+  spec.dependency 'ObjectMapper'
+  spec.dependency 'SwiftyJSON'
   spec.dependency 'Alamofire'
   spec.dependency 'CocoaLumberjack/Swift'
   

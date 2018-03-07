@@ -8,6 +8,8 @@ target 'CareemMovie' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RealmSwift'
+    pod 'SwiftyJSON'
+    pod 'ObjectMapper'
     pod 'Kingfisher', '~> 4.6'
     pod 'KeychainAccess'
     pod 'TPKeyboardAvoiding', '~> 1.3'

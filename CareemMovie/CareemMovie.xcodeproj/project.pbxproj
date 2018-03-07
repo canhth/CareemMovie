@@ -26,25 +26,25 @@
 		0372451B204F9DAE0033C285 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244E0204F9DAE0033C285 /* Helper.swift */; };
 		0372451C204F9DAE0033C285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037244E2204F9DAE0033C285 /* Assets.xcassets */; };
 		0372451E204F9DAE0033C285 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244E5204F9DAE0033C285 /* LoadingView.swift */; };
-		0372451F204F9DAE0033C285 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244E9204F9DAE0033C285 /* RestaurantListViewModel.swift */; };
-		03724520204F9DAE0033C285 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244EB204F9DAE0033C285 /* Restaurant.swift */; };
-		03724521204F9DAE0033C285 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244ED204F9DAE0033C285 /* RestaurantViewController.swift */; };
-		03724522204F9DAE0033C285 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037244F0204F9DAE0033C285 /* RestaurantCell.xib */; };
-		03724523204F9DAE0033C285 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244F1204F9DAE0033C285 /* RestaurantCell.swift */; };
 		03724524204F9DAE0033C285 /* BaseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244F3204F9DAE0033C285 /* BaseMainViewController.swift */; };
-		03724525204F9DAE0033C285 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244F4204F9DAE0033C285 /* MainTabbarViewController.swift */; };
-		03724526204F9DAE0033C285 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244F7204F9DAE0033C285 /* ProfileViewController.swift */; };
-		03724527204F9DAE0033C285 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244FC204F9DAE0033C285 /* LoginViewModel.swift */; };
-		03724528204F9DAE0033C285 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244FE204F9DAE0033C285 /* User.swift */; };
-		03724529204F9DAE0033C285 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724500204F9DAE0033C285 /* LoginViewController.swift */; };
-		0372452A204F9DAE0033C285 /* ValidateTextFieldStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724502204F9DAE0033C285 /* ValidateTextFieldStackView.swift */; };
 		0372452B204F9DAE0033C285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03724504204F9DAE0033C285 /* LaunchScreen.storyboard */; };
 		0372452C204F9DAE0033C285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03724506204F9DAE0033C285 /* Main.storyboard */; };
-		0372452D204F9DAE0033C285 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03724508204F9DAE0033C285 /* Login.storyboard */; };
 		0372452E204F9DAE0033C285 /* BaseRealmObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372450A204F9DAE0033C285 /* BaseRealmObjectModel.swift */; };
 		0372452F204F9DAE0033C285 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372450B204F9DAE0033C285 /* ResultExtension.swift */; };
 		03724530204F9DAE0033C285 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372450C204F9DAE0033C285 /* RealmExtension.swift */; };
 		03724531204F9DAE0033C285 /* ObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372450D204F9DAE0033C285 /* ObjectExtension.swift */; };
+		03724534204FC7400033C285 /* CareemSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724533204FC7400033C285 /* CareemSearchBar.swift */; };
+		03724536204FC84C0033C285 /* CareemSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724535204FC84C0033C285 /* CareemSearchViewController.swift */; };
+		0372453E204FD4FA0033C285 /* HomeMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372453D204FD4FA0033C285 /* HomeMoviesViewController.swift */; };
+		03724547204FD5360033C285 /* SuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724545204FD5360033C285 /* SuggestionCell.swift */; };
+		03724548204FD5360033C285 /* SuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03724546204FD5360033C285 /* SuggestionCell.xib */; };
+		0372454C204FD56D0033C285 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372454A204FD56D0033C285 /* MovieCell.swift */; };
+		0372454D204FD56D0033C285 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0372454B204FD56D0033C285 /* MovieCell.xib */; };
+		0372454F204FE5330033C285 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372454E204FE5330033C285 /* Movie.swift */; };
+		03724551204FE5820033C285 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724550204FE5820033C285 /* Suggestion.swift */; };
+		03724555204FF5230033C285 /* SearchMovieParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724554204FF5230033C285 /* SearchMovieParams.swift */; };
+		03724557204FF7DD0033C285 /* HomeMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724556204FF7DD0033C285 /* HomeMoviesViewModel.swift */; };
+		0372455A204FF8C60033C285 /* HomeMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724559204FF8C60033C285 /* HomeMoviesService.swift */; };
 		5888D864E1161C96650D0D45 /* Pods_CareemMovieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F683FD7EAB51E203CFE6987 /* Pods_CareemMovieTests.framework */; };
 		D7759200C74BC11E4AEFC9C2 /* Pods_CareemMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7144E3155725074CBE67F443 /* Pods_CareemMovie.framework */; };
 /* End PBXBuildFile section */
@@ -92,25 +92,25 @@
 		037244E0204F9DAE0033C285 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		037244E2204F9DAE0033C285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		037244E5204F9DAE0033C285 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		037244E9204F9DAE0033C285 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
-		037244EB204F9DAE0033C285 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		037244ED204F9DAE0033C285 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
-		037244F0204F9DAE0033C285 /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
-		037244F1204F9DAE0033C285 /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		037244F3204F9DAE0033C285 /* BaseMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMainViewController.swift; sourceTree = "<group>"; };
-		037244F4204F9DAE0033C285 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
-		037244F7204F9DAE0033C285 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		037244FC204F9DAE0033C285 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		037244FE204F9DAE0033C285 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		03724500204F9DAE0033C285 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		03724502204F9DAE0033C285 /* ValidateTextFieldStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateTextFieldStackView.swift; sourceTree = "<group>"; };
 		03724505204F9DAE0033C285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03724507204F9DAE0033C285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		03724508204F9DAE0033C285 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0372450A204F9DAE0033C285 /* BaseRealmObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmObjectModel.swift; sourceTree = "<group>"; };
 		0372450B204F9DAE0033C285 /* ResultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultExtension.swift; sourceTree = "<group>"; };
 		0372450C204F9DAE0033C285 /* RealmExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		0372450D204F9DAE0033C285 /* ObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectExtension.swift; sourceTree = "<group>"; };
+		03724533204FC7400033C285 /* CareemSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareemSearchBar.swift; sourceTree = "<group>"; };
+		03724535204FC84C0033C285 /* CareemSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareemSearchViewController.swift; sourceTree = "<group>"; };
+		0372453D204FD4FA0033C285 /* HomeMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesViewController.swift; sourceTree = "<group>"; };
+		03724545204FD5360033C285 /* SuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCell.swift; sourceTree = "<group>"; };
+		03724546204FD5360033C285 /* SuggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionCell.xib; sourceTree = "<group>"; };
+		0372454A204FD56D0033C285 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		0372454B204FD56D0033C285 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		0372454E204FE5330033C285 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		03724550204FE5820033C285 /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		03724554204FF5230033C285 /* SearchMovieParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieParams.swift; sourceTree = "<group>"; };
+		03724556204FF7DD0033C285 /* HomeMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesViewModel.swift; sourceTree = "<group>"; };
+		03724559204FF8C60033C285 /* HomeMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesService.swift; sourceTree = "<group>"; };
 		298EA76EAA32E07B1D022CC6 /* Pods-CareemMovieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareemMovieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareemMovieTests/Pods-CareemMovieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BEB1773E2D7084412217188 /* Pods-CareemMovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareemMovieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CareemMovieTests/Pods-CareemMovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F683FD7EAB51E203CFE6987 /* Pods_CareemMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareemMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +249,7 @@
 		037244E4204F9DAE0033C285 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				03724532204FC7220033C285 /* SearchBar */,
 				037244E5204F9DAE0033C285 /* LoadingView.swift */,
 			);
 			path = CommonViews;
@@ -257,156 +258,25 @@
 		037244E6204F9DAE0033C285 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				037244E7204F9DAE0033C285 /* Restaurant */,
+				03724537204FD1E70033C285 /* HomeMovies */,
 				037244F2204F9DAE0033C285 /* MainHome */,
-				037244F5204F9DAE0033C285 /* Profile */,
-				037244FA204F9DAE0033C285 /* Login */,
 			);
 			path = Sections;
-			sourceTree = "<group>";
-		};
-		037244E7204F9DAE0033C285 /* Restaurant */ = {
-			isa = PBXGroup;
-			children = (
-				037244E8204F9DAE0033C285 /* ViewModels */,
-				037244EA204F9DAE0033C285 /* Models */,
-				037244EC204F9DAE0033C285 /* Controllers */,
-				037244EE204F9DAE0033C285 /* Views */,
-			);
-			path = Restaurant;
-			sourceTree = "<group>";
-		};
-		037244E8204F9DAE0033C285 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				037244E9204F9DAE0033C285 /* RestaurantListViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		037244EA204F9DAE0033C285 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				037244EB204F9DAE0033C285 /* Restaurant.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		037244EC204F9DAE0033C285 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				037244ED204F9DAE0033C285 /* RestaurantViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		037244EE204F9DAE0033C285 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				037244EF204F9DAE0033C285 /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		037244EF204F9DAE0033C285 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				037244F0204F9DAE0033C285 /* RestaurantCell.xib */,
-				037244F1204F9DAE0033C285 /* RestaurantCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		037244F2204F9DAE0033C285 /* MainHome */ = {
 			isa = PBXGroup;
 			children = (
 				037244F3204F9DAE0033C285 /* BaseMainViewController.swift */,
-				037244F4204F9DAE0033C285 /* MainTabbarViewController.swift */,
 			);
 			path = MainHome;
-			sourceTree = "<group>";
-		};
-		037244F5204F9DAE0033C285 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				037244F6204F9DAE0033C285 /* ViewModels */,
-				037244F7204F9DAE0033C285 /* ProfileViewController.swift */,
-				037244F8204F9DAE0033C285 /* Controllers */,
-				037244F9204F9DAE0033C285 /* Views */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		037244F6204F9DAE0033C285 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		037244F8204F9DAE0033C285 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		037244F9204F9DAE0033C285 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		037244FA204F9DAE0033C285 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				037244FB204F9DAE0033C285 /* ViewModels */,
-				037244FD204F9DAE0033C285 /* Models */,
-				037244FF204F9DAE0033C285 /* Controllers */,
-				03724501204F9DAE0033C285 /* Views */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		037244FB204F9DAE0033C285 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				037244FC204F9DAE0033C285 /* LoginViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		037244FD204F9DAE0033C285 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				037244FE204F9DAE0033C285 /* User.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		037244FF204F9DAE0033C285 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				03724500204F9DAE0033C285 /* LoginViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		03724501204F9DAE0033C285 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				03724502204F9DAE0033C285 /* ValidateTextFieldStackView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		03724503204F9DAE0033C285 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				03724504204F9DAE0033C285 /* LaunchScreen.storyboard */,
 				03724506204F9DAE0033C285 /* Main.storyboard */,
-				03724508204F9DAE0033C285 /* Login.storyboard */,
+				03724504204F9DAE0033C285 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -420,6 +290,80 @@
 				0372450D204F9DAE0033C285 /* ObjectExtension.swift */,
 			);
 			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		03724532204FC7220033C285 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				03724533204FC7400033C285 /* CareemSearchBar.swift */,
+				03724535204FC84C0033C285 /* CareemSearchViewController.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		03724537204FD1E70033C285 /* HomeMovies */ = {
+			isa = PBXGroup;
+			children = (
+				03724558204FF8940033C285 /* Services */,
+				03724539204FD21A0033C285 /* Models */,
+				03724538204FD2140033C285 /* ViewModels */,
+				0372453A204FD2210033C285 /* Views */,
+				0372453C204FD22D0033C285 /* Controllers */,
+			);
+			path = HomeMovies;
+			sourceTree = "<group>";
+		};
+		03724538204FD2140033C285 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				03724556204FF7DD0033C285 /* HomeMoviesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		03724539204FD21A0033C285 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0372454E204FE5330033C285 /* Movie.swift */,
+				03724550204FE5820033C285 /* Suggestion.swift */,
+				03724554204FF5230033C285 /* SearchMovieParams.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0372453A204FD2210033C285 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03724549204FD5430033C285 /* TableCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0372453C204FD22D0033C285 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0372453D204FD4FA0033C285 /* HomeMoviesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		03724549204FD5430033C285 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				03724545204FD5360033C285 /* SuggestionCell.swift */,
+				03724546204FD5360033C285 /* SuggestionCell.xib */,
+				0372454A204FD56D0033C285 /* MovieCell.swift */,
+				0372454B204FD56D0033C285 /* MovieCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		03724558204FF8940033C285 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				03724559204FF8C60033C285 /* HomeMoviesService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		57FF073EF2308FD4D1D4FF49 /* Pods */ = {
@@ -556,10 +500,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0372452C204F9DAE0033C285 /* Main.storyboard in Resources */,
-				0372452D204F9DAE0033C285 /* Login.storyboard in Resources */,
+				0372454D204FD56D0033C285 /* MovieCell.xib in Resources */,
+				03724548204FD5360033C285 /* SuggestionCell.xib in Resources */,
 				0372452B204F9DAE0033C285 /* LaunchScreen.storyboard in Resources */,
 				0372451C204F9DAE0033C285 /* Assets.xcassets in Resources */,
-				03724522204F9DAE0033C285 /* RestaurantCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,11 +556,13 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -628,11 +574,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,37 +663,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03724523204F9DAE0033C285 /* RestaurantCell.swift in Sources */,
-				03724525204F9DAE0033C285 /* MainTabbarViewController.swift in Sources */,
 				0372452F204F9DAE0033C285 /* ResultExtension.swift in Sources */,
 				03724512204F9DAE0033C285 /* UIViewController+Extension.swift in Sources */,
-				03724528204F9DAE0033C285 /* User.swift in Sources */,
 				03724517204F9DAE0033C285 /* Constants.swift in Sources */,
 				0372451B204F9DAE0033C285 /* Helper.swift in Sources */,
 				03724515204F9DAE0033C285 /* Operation+Extension.swift in Sources */,
+				03724534204FC7400033C285 /* CareemSearchBar.swift in Sources */,
 				03724513204F9DAE0033C285 /* String+Extension.swift in Sources */,
 				03724530204F9DAE0033C285 /* RealmExtension.swift in Sources */,
+				03724557204FF7DD0033C285 /* HomeMoviesViewModel.swift in Sources */,
 				0372451E204F9DAE0033C285 /* LoadingView.swift in Sources */,
-				0372452A204F9DAE0033C285 /* ValidateTextFieldStackView.swift in Sources */,
 				03724524204F9DAE0033C285 /* BaseMainViewController.swift in Sources */,
 				0372450F204F9DAE0033C285 /* UIColor+Extension.swift in Sources */,
+				0372454F204FE5330033C285 /* Movie.swift in Sources */,
+				0372455A204FF8C60033C285 /* HomeMoviesService.swift in Sources */,
 				0372451A204F9DAE0033C285 /* BindingExtension.swift in Sources */,
-				03724520204F9DAE0033C285 /* Restaurant.swift in Sources */,
+				03724555204FF5230033C285 /* SearchMovieParams.swift in Sources */,
 				03724514204F9DAE0033C285 /* UITableViewCell+Extension.swift in Sources */,
 				03724516204F9DAE0033C285 /* UITextField+Extension.swift in Sources */,
-				03724521204F9DAE0033C285 /* RestaurantViewController.swift in Sources */,
-				03724526204F9DAE0033C285 /* ProfileViewController.swift in Sources */,
+				0372454C204FD56D0033C285 /* MovieCell.swift in Sources */,
+				03724536204FC84C0033C285 /* CareemSearchViewController.swift in Sources */,
+				03724547204FD5360033C285 /* SuggestionCell.swift in Sources */,
+				03724551204FE5820033C285 /* Suggestion.swift in Sources */,
+				0372453E204FD4FA0033C285 /* HomeMoviesViewController.swift in Sources */,
 				03724510204F9DAE0033C285 /* UIButton+Extension.swift in Sources */,
 				0372450E204F9DAE0033C285 /* UIApplication+Extension.swift in Sources */,
 				03724511204F9DAE0033C285 /* UIView+Extension.swift in Sources */,
 				0372452E204F9DAE0033C285 /* BaseRealmObjectModel.swift in Sources */,
 				03724519204F9DAE0033C285 /* ValidateProtocol.swift in Sources */,
-				03724527204F9DAE0033C285 /* LoginViewModel.swift in Sources */,
 				03724531204F9DAE0033C285 /* ObjectExtension.swift in Sources */,
 				037244A3204F9D540033C285 /* AppDelegate.swift in Sources */,
 				03724518204F9DAE0033C285 /* ValidateService.swift in Sources */,
-				03724529204F9DAE0033C285 /* LoginViewController.swift in Sources */,
-				0372451F204F9DAE0033C285 /* RestaurantListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

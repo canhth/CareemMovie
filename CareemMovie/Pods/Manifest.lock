@@ -7,11 +7,14 @@ PODS:
   - CT_RESTAPI (1.0.0):
     - Alamofire
     - CocoaLumberjack/Swift
+    - ObjectMapper
     - RxSwift
+    - SwiftyJSON
   - IQKeyboardManagerSwift (5.0.7)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.6.1)
   - Nimble (7.0.3)
+  - ObjectMapper (3.1.0)
   - Quick (1.2.0)
   - Realm (3.1.1):
     - Realm/Headers (= 3.1.1)
@@ -22,6 +25,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SVProgressHUD (2.1.2)
+  - SwiftyJSON (4.0.0)
   - TPKeyboardAvoiding (1.3.2)
 
 DEPENDENCIES:
@@ -32,11 +36,13 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher (~> 4.6)
   - Nimble (~> 7.0)
+  - ObjectMapper
   - Quick (~> 1.2)
   - RealmSwift
   - RxCocoa
   - RxSwift
   - SVProgressHUD (= 2.1.2)
+  - SwiftyJSON
   - TPKeyboardAvoiding (~> 1.3)
 
 EXTERNAL SOURCES:
@@ -47,19 +53,21 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AMScrollingNavbar: 84d998ea885809d61bbc886053115ec3f2a64f41
   CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
-  CT_RESTAPI: 4b018e5244dd7203ffedc5b7f805c7f1ba46df89
+  CT_RESTAPI: f5d6edceb77ff708c8d658c158920efa277dccd3
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 00cb666c785d6a9a457305a7fda8f1e426b69f7f
+PODFILE CHECKSUM: 5a4f9615454e6978182fa81d2e71a5b2352eff41
 
 COCOAPODS: 1.3.1
