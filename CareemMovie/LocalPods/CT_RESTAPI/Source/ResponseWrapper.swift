@@ -89,7 +89,7 @@ public extension ResponseWrapper {
         }
         
         var results = [T]()
-        if let listResults = Mapper<T>().mapArray(JSONObject: arrayJson) {
+        if let listResults = Mapper<T>().mapArray(JSONObject: arrayJson.arrayObject) {
             results = listResults
         }
         return results

@@ -46,7 +46,7 @@ open class RESTError: Codable {
         case errorResponse = "message"
     }
     
-    init(typeError : CTNetworkErrorType) {
+    init(typeError : CTNetworkErrorType, status: Bool = false, code: Int = 404) {
         switch typeError {
         case .noNetwork:
             errorFromResponse = "No network" //set default string here
@@ -83,7 +83,7 @@ open class RESTError: Codable {
         
         if (error != nil) {
             let errorString: String! = error!.localizedDescription
-            restError.errorFromResponse = errorString
+            restError.errorFromResponse = errorString 
         }
         
         return restError

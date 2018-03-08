@@ -49,6 +49,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="resultsLabel" destination="g3U-UV-PNg" id="nK4-Gp-2q4"/>
+                <outlet property="suggestionNameLabel" destination="BD4-1N-tdt" id="roU-Ov-x2d"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

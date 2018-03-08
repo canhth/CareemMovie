@@ -16,6 +16,13 @@ struct MovieResults: Mappable {
     var results         : [Movie]!
 
     init?(map: Map) {}
+    
+    init() {
+        self.page = 0
+        self.totaResults = 0
+        self.totalPages = 0
+        self.results = [Movie]()
+    }
 
     mutating func mapping(map: Map) {
         page            <- map["page"]

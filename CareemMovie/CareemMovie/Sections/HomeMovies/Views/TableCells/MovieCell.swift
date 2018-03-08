@@ -13,7 +13,7 @@ final class MovieCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.contentView.layer.applySketchShadow(color: UIColor.shadownColor(), alpha: 1, x: 0, y: 2, blur: 4, spread: 0)
+        self.contentView.layer.applySketchShadow(color: UIColor.shadowColor, alpha: 1, x: 0, y: 2, blur: 4, spread: 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

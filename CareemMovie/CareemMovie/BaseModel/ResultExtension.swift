@@ -21,7 +21,7 @@ public extension Results {
         return result
     }
     
-    func toArray<T>(type: T.Type) -> [T] {
+    func toArray<T>() -> [T] {
         return flatMap { $0 as? T }
     }
 }

@@ -31,5 +31,23 @@ public extension UITableView {
         let nib = UINib(nibName: identifier, bundle: nil)
         self.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
     }
+    
+    func isNearTheBottomEdge(contentOffset: CGPoint, startLoadingOffset: CGFloat) -> Bool {
+        return contentOffset.y + self.frame.size.height + startLoadingOffset > self.contentSize.height
+    }
+    
+    func setupHeightHeaderTableViewAutomaticly() {
+        if let headerView = self.tableHeaderView {
+            
+            let height = self.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            var headerFrame = headerView.frame
+            
+            if height != headerFrame.size.height {
+                headerFrame.size.height = height
+                headerView.frame = headerFrame
+                self.tableHeaderView = headerView
+            }
+        }
+    }
 }
 

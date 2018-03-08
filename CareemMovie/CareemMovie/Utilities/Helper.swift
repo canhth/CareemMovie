@@ -8,6 +8,7 @@
 
 import UIKit
 import KeychainAccess
+import CT_RESTAPI
 
 enum FontType: Int {
     case Default = 0, Small, Large
@@ -61,5 +62,23 @@ class Helper {
             return token.count > 0
         }
         return false
+    }
+    
+    static func showAlertViewWith(error: CTNetworkErrorType) {
+        if let viewController = UIApplication.topViewController() {
+            let title = "Error \(error.errorCode)"
+            var message = ""
+            switch error {
+            case let .errorMessage(_, _, errorMessage):
+                message = errorMessage
+                break
+            default:
+                break
+            }
+            
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            viewController.present(alert, animated: true, completion: nil)
+        }
     }
 }

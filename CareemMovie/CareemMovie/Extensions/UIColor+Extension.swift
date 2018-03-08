@@ -49,9 +49,16 @@ extension UIColor {
             alpha:alpha)
     }
     
-    static func shadownColor() -> UIColor {
+    static var shadowColor: UIColor = {
         return UIColor(hex: "000000").withAlphaComponent(0.5)
-    }
+    }()
     
+    static var careemOrangeColor: UIColor = {
+        return UIColor(hex: "F07F1E").withAlphaComponent(1)
+    }()
+    
+    static var careemTextColor: UIColor = {
+        return UIColor(hex: "222222").withAlphaComponent(0.8)
+    }()
 }
 

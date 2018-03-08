@@ -135,29 +135,30 @@ open class RESTApiClient: NSObject {
                 .responseData(queue: DispatchQueue.main, completionHandler: { [weak self] (response) in
                     
                     DDLogInfo("[\(Date().timeIntervalSince1970)] \(response.response?.statusCode ?? 0) \(self?.baseUrl ?? "") \(response.result.debugDescription) \(response.result.error?.localizedDescription ?? "")")
-                    do {
-                        let json = try JSON(data: response.data ?? Data())
-                        switch response.result {
-                        case .success(_):
+                    switch response.result {
+                    case .success(_):
+                        do {
+                            let json = try JSON(data: response.data ?? Data())
                             let responseWrapper = ResponseWrapper(json: json, response: response)
                             observer.onNext(responseWrapper)
                             observer.onCompleted()
-                        case .failure(let error):
-                            if let error = error as? URLError {
-                                switch error.errorCode {
-                                case -1009:
-                                    observer.onError(RESTError(typeError: .unspecified(error: error)).toError())
-                                    return
-                                case NSURLErrorTimedOut:
-                                    observer.onError(RESTError(typeError: .timeout).toError())
-                                    return
-                                default: break
-                                }
-                            }
-                            observer.onError(RESTError.parseError(response.data, error: response.result.error).toError())
+                        } catch {
+                            observer.onError(RESTError(typeError: .unspecified(error: error)).toError())
+                            DDLogInfo("Error when parsing JSON: \(error)")
                         }
-                    } catch {
-                        DDLogInfo("Error when parsing JSON: \(error)")
+                    case .failure(let error):
+                        if let error = error as? URLError {
+                            switch error.errorCode {
+                            case -1009:
+                                observer.onError(RESTError(typeError: .unspecified(error: error)).toError())
+                                return
+                            case NSURLErrorTimedOut:
+                                observer.onError(RESTError(typeError: .timeout, code: error.errorCode).toError())
+                                return
+                            default: break
+                            }
+                        } 
+                        observer.onError(RESTError.parseError(response.data, error: response.result.error).toError())
                     }
                 })
             

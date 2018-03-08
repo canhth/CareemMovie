@@ -23,6 +23,7 @@ class LoaddingView: UIView {
     
     func startLoadding() {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             LoaddingView.hudCount += 1
             SVProgressHUD.setFadeInAnimationDuration(0.1)
             SVProgressHUD.setFadeOutAnimationDuration(0.1)
@@ -34,6 +35,7 @@ class LoaddingView: UIView {
     
     func stopLoadding() {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             LoaddingView.hudCount -= 1
             if LoaddingView.hudCount <= 0 {
                 LoaddingView.hudCount = 0

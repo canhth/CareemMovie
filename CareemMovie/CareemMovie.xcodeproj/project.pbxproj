@@ -16,8 +16,7 @@
 		03724511204F9DAE0033C285 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D4204F9DAE0033C285 /* UIView+Extension.swift */; };
 		03724512204F9DAE0033C285 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D5204F9DAE0033C285 /* UIViewController+Extension.swift */; };
 		03724513204F9DAE0033C285 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D6204F9DAE0033C285 /* String+Extension.swift */; };
-		03724514204F9DAE0033C285 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D7204F9DAE0033C285 /* UITableViewCell+Extension.swift */; };
-		03724515204F9DAE0033C285 /* Operation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D8204F9DAE0033C285 /* Operation+Extension.swift */; };
+		03724514204F9DAE0033C285 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D7204F9DAE0033C285 /* UITableView+Extension.swift */; };
 		03724516204F9DAE0033C285 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244D9204F9DAE0033C285 /* UITextField+Extension.swift */; };
 		03724517204F9DAE0033C285 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244DB204F9DAE0033C285 /* Constants.swift */; };
 		03724518204F9DAE0033C285 /* ValidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037244DD204F9DAE0033C285 /* ValidateService.swift */; };
@@ -45,6 +44,9 @@
 		03724555204FF5230033C285 /* SearchMovieParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724554204FF5230033C285 /* SearchMovieParams.swift */; };
 		03724557204FF7DD0033C285 /* HomeMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724556204FF7DD0033C285 /* HomeMoviesViewModel.swift */; };
 		0372455A204FF8C60033C285 /* HomeMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03724559204FF8C60033C285 /* HomeMoviesService.swift */; };
+		037DE3472050FD0E00C3C05B /* SearchSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE3462050FD0E00C3C05B /* SearchSuggestionsViewController.swift */; };
+		037DE34A205113A900C3C05B /* PaginationNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE349205113A900C3C05B /* PaginationNetworkModel.swift */; };
+		037DE34C2051603000C3C05B /* Operation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE34B2051603000C3C05B /* Operation+Extension.swift */; };
 		5888D864E1161C96650D0D45 /* Pods_CareemMovieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F683FD7EAB51E203CFE6987 /* Pods_CareemMovieTests.framework */; };
 		D7759200C74BC11E4AEFC9C2 /* Pods_CareemMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7144E3155725074CBE67F443 /* Pods_CareemMovie.framework */; };
 /* End PBXBuildFile section */
@@ -82,8 +84,7 @@
 		037244D4204F9DAE0033C285 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		037244D5204F9DAE0033C285 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		037244D6204F9DAE0033C285 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		037244D7204F9DAE0033C285 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		037244D8204F9DAE0033C285 /* Operation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operation+Extension.swift"; sourceTree = "<group>"; };
+		037244D7204F9DAE0033C285 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		037244D9204F9DAE0033C285 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		037244DB204F9DAE0033C285 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		037244DD204F9DAE0033C285 /* ValidateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateService.swift; sourceTree = "<group>"; };
@@ -111,6 +112,9 @@
 		03724554204FF5230033C285 /* SearchMovieParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieParams.swift; sourceTree = "<group>"; };
 		03724556204FF7DD0033C285 /* HomeMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesViewModel.swift; sourceTree = "<group>"; };
 		03724559204FF8C60033C285 /* HomeMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesService.swift; sourceTree = "<group>"; };
+		037DE3462050FD0E00C3C05B /* SearchSuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewController.swift; sourceTree = "<group>"; };
+		037DE349205113A900C3C05B /* PaginationNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationNetworkModel.swift; sourceTree = "<group>"; };
+		037DE34B2051603000C3C05B /* Operation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operation+Extension.swift"; sourceTree = "<group>"; };
 		298EA76EAA32E07B1D022CC6 /* Pods-CareemMovieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareemMovieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareemMovieTests/Pods-CareemMovieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BEB1773E2D7084412217188 /* Pods-CareemMovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareemMovieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CareemMovieTests/Pods-CareemMovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F683FD7EAB51E203CFE6987 /* Pods_CareemMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareemMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,14 +209,14 @@
 		037244D0204F9DAE0033C285 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				037DE34B2051603000C3C05B /* Operation+Extension.swift */,
 				037244D1204F9DAE0033C285 /* UIApplication+Extension.swift */,
 				037244D2204F9DAE0033C285 /* UIColor+Extension.swift */,
 				037244D3204F9DAE0033C285 /* UIButton+Extension.swift */,
 				037244D4204F9DAE0033C285 /* UIView+Extension.swift */,
 				037244D5204F9DAE0033C285 /* UIViewController+Extension.swift */,
 				037244D6204F9DAE0033C285 /* String+Extension.swift */,
-				037244D7204F9DAE0033C285 /* UITableViewCell+Extension.swift */,
-				037244D8204F9DAE0033C285 /* Operation+Extension.swift */,
+				037244D7204F9DAE0033C285 /* UITableView+Extension.swift */,
 				037244D9204F9DAE0033C285 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
@@ -221,8 +225,8 @@
 		037244DA204F9DAE0033C285 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				037244DB204F9DAE0033C285 /* Constants.swift */,
 				037244DC204F9DAE0033C285 /* Validate */,
+				037244DB204F9DAE0033C285 /* Constants.swift */,
 				037244E0204F9DAE0033C285 /* Helper.swift */,
 			);
 			path = Utilities;
@@ -288,6 +292,7 @@
 				0372450B204F9DAE0033C285 /* ResultExtension.swift */,
 				0372450C204F9DAE0033C285 /* RealmExtension.swift */,
 				0372450D204F9DAE0033C285 /* ObjectExtension.swift */,
+				037DE349205113A900C3C05B /* PaginationNetworkModel.swift */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				0372453D204FD4FA0033C285 /* HomeMoviesViewController.swift */,
+				037DE3462050FD0E00C3C05B /* SearchSuggestionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -665,9 +671,9 @@
 			files = (
 				0372452F204F9DAE0033C285 /* ResultExtension.swift in Sources */,
 				03724512204F9DAE0033C285 /* UIViewController+Extension.swift in Sources */,
+				037DE34A205113A900C3C05B /* PaginationNetworkModel.swift in Sources */,
 				03724517204F9DAE0033C285 /* Constants.swift in Sources */,
 				0372451B204F9DAE0033C285 /* Helper.swift in Sources */,
-				03724515204F9DAE0033C285 /* Operation+Extension.swift in Sources */,
 				03724534204FC7400033C285 /* CareemSearchBar.swift in Sources */,
 				03724513204F9DAE0033C285 /* String+Extension.swift in Sources */,
 				03724530204F9DAE0033C285 /* RealmExtension.swift in Sources */,
@@ -679,7 +685,8 @@
 				0372455A204FF8C60033C285 /* HomeMoviesService.swift in Sources */,
 				0372451A204F9DAE0033C285 /* BindingExtension.swift in Sources */,
 				03724555204FF5230033C285 /* SearchMovieParams.swift in Sources */,
-				03724514204F9DAE0033C285 /* UITableViewCell+Extension.swift in Sources */,
+				037DE3472050FD0E00C3C05B /* SearchSuggestionsViewController.swift in Sources */,
+				03724514204F9DAE0033C285 /* UITableView+Extension.swift in Sources */,
 				03724516204F9DAE0033C285 /* UITextField+Extension.swift in Sources */,
 				0372454C204FD56D0033C285 /* MovieCell.swift in Sources */,
 				03724536204FC84C0033C285 /* CareemSearchViewController.swift in Sources */,
@@ -693,6 +700,7 @@
 				03724519204F9DAE0033C285 /* ValidateProtocol.swift in Sources */,
 				03724531204F9DAE0033C285 /* ObjectExtension.swift in Sources */,
 				037244A3204F9D540033C285 /* AppDelegate.swift in Sources */,
+				037DE34C2051603000C3C05B /* Operation+Extension.swift in Sources */,
 				03724518204F9DAE0033C285 /* ValidateService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

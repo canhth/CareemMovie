@@ -6,7 +6,7 @@
 //  Copyright © 2018 Tran Hoang Canh. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 extension UIViewController {
     
@@ -35,6 +35,5 @@ extension UIViewController {
         
         return controller
     }
-    
     
 }

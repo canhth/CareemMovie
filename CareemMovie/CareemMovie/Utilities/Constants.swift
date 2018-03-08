@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
