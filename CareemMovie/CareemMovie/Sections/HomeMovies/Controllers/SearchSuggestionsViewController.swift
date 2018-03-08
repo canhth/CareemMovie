@@ -47,6 +47,13 @@ class SearchSuggestionsViewController: BaseMainViewController {
                                                 }
                     }.disposed(by: strongSelf.disposeBag)
             }).disposed(by: disposeBag)
+        
+        // Selected item TableView
+        tableView.rx.modelSelected(Suggestion.self)
+            .subscribe(onNext: { [weak self] model in
+                guard let strongSelf = self else { return }
+                strongSelf.homeMoviesViewModel.queryString.onNext(model.name)
+            }).disposed(by: disposeBag)
     }
     
 }

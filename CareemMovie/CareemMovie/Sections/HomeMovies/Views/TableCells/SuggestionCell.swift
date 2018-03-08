@@ -26,7 +26,7 @@ final class SuggestionCell: UITableViewCell {
     
     func setupCellWithSuggestion(model: Suggestion) {
         suggestionNameLabel.text = model.name
-        resultsLabel.text = model.totalResult
+        resultsLabel.text = "\(model.totalResult) result" + ((Int(model.totalResult) ?? 0) > 1 ? "s" : "")
     }
     
 }

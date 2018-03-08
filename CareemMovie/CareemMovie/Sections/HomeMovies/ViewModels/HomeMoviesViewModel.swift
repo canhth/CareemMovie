@@ -23,37 +23,36 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     fileprivate(set) var page                       = BehaviorSubject<Int>(value: 1)
     fileprivate      let disposeBag                 = DisposeBag()
     
+    
+    //MARK: - Main functions
     func setupHomeMovieViewModel(searchTextField: Reactive<CareemSearchBar>) {
         isLoadingAnimation.onNext(true)
         
         let parameter: Observable<SearchMovieParams> = Observable.combineLatest(queryString.asObservable(), page.asObservable()) { (query, page) ->  SearchMovieParams in
             let param = SearchMovieParams(query: query, page: page)
+            self.offset = page
             self.searchParam = Variable<SearchMovieParams>(param)
             return param
         }
         
+        // --- Setup movies results list Observable ---
         moviesResultObservable = parameter.flatMapLatest { (param) -> Observable<MovieResults?> in
             self.isLoadingAnimation.onNext(true)
             
             return HomeMoviesService.getMoviesWithParam(param: param)
                 .observeOn(MainScheduler.instance)
                 .catchError({ [weak self] (error) -> Observable<MovieResults?> in
+                    // Handle Error
                     self?.errorObservable.onNext(error as! CTNetworkErrorType)
                     return Observable.empty()
                 })
             }.map { [weak self] (result) -> MovieResults in
-                guard let strongSelf = self, let value = result, value.totaResults > 0  else { return MovieResults() }
-                strongSelf.elements.value = value.results
-                strongSelf.isLoadingAnimation.onNext(false)
-                strongSelf.saveSuggestion(query: strongSelf.searchParam.value.query, totalResult: value.totaResults.description)
+                guard let strongSelf = self, let value = result, value.totaResults > 0 else { return MovieResults() }
+                strongSelf.setupModelWithNewResults(results: value)
                 return value
             }.share(replay: 1)
         
-        moviesResultObservable
-            .subscribe { (_) in
-                self.isLoadingAnimation.onNext(false)
-            }.disposed(by: disposeBag)
-        
+        // --- Setup suggestions Observable list ---
         suggestionsObservable = searchTextField.textDidBeginEditing
             .asObservable()
             .flatMapLatest { (_) -> Observable<[Suggestion]> in
@@ -61,9 +60,10 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
             }.share(replay: 1)
     }
     
-    // Lazy loading method
+    // --- Lazy loading method ---
     override func loadData(offset: Int) -> Observable<[Movie]> {
         self.isLoadingAnimation.onNext(true)
+        searchParam.value.page = offset 
         let observable: Observable<[Movie]> = HomeMoviesService.getMoviesArrayWithParam(param: searchParam.value, keyPath: "results")
             .observeOn(MainScheduler.instance)
             .map { (value) -> [Movie] in
@@ -73,6 +73,16 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
             self.isLoadingAnimation.onNext(false)
             }.disposed(by: disposeBag)
         return observable
+    }
+    
+    //MARK: - Supporting methods
+    
+    // --- Setup data of view model after fetched results ---
+    fileprivate func setupModelWithNewResults(results: MovieResults) {
+        self.elements.value = results.results
+        self.maxOffset = results.totalPages
+        self.isLoadingAnimation.onNext(false)
+        self.saveSuggestion(query: self.searchParam.value.query, totalResult: results.totaResults.description)
     }
     
     fileprivate func saveSuggestion(query: String, totalResult: String) {

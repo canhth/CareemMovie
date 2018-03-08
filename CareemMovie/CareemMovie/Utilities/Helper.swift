@@ -81,4 +81,10 @@ class Helper {
             viewController.present(alert, animated: true, completion: nil)
         }
     }
+    
+    static func getFullImageURL(imagePath: String, type: ImageSize) -> String {
+        let imageURLDomain = RESTContants.kDefineWebserviceResourceUrl
+        let fullImageURL = imageURLDomain + type.rawValue + imagePath
+        return fullImageURL
+    }
 }

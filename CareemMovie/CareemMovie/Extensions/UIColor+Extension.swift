@@ -50,7 +50,7 @@ extension UIColor {
     }
     
     static var shadowColor: UIColor = {
-        return UIColor(hex: "000000").withAlphaComponent(0.5)
+        return UIColor(hex: "000000").withAlphaComponent(1)
     }()
     
     static var careemOrangeColor: UIColor = {

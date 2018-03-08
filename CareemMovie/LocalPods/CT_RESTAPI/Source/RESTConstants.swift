@@ -28,9 +28,9 @@ public struct RESTContants {
     #endif
 
     #if DEBUG
-    static let kDefineWebserviceResourceUrl             = "http://image.tmdb.org/t/p/"
+        public static let kDefineWebserviceResourceUrl             = "http://image.tmdb.org/t/p/"
     #else
-    static let kDefineWebserviceResourceUrl             = "http://image.tmdb.org/t/p/"
+        public static let kDefineWebserviceResourceUrl             = "http://image.tmdb.org/t/p/"
     #endif
     
     static let headers                                  = ["Content-Type" : "application/json"]

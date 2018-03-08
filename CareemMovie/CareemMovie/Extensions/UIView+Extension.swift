@@ -11,7 +11,6 @@ import UIKit
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
-        
         get {
             return layer.cornerRadius
         }
@@ -22,25 +21,19 @@ extension UIView {
     }
     
     @IBInspectable var borderWidth: CGFloat {
-        
         get {
             return layer.borderWidth
         }
-        
         set {
-            
             layer.borderWidth = newValue
         }
     }
     
     @IBInspectable var borderColor: UIColor? {
-        
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
-        
         set {
-            
             layer.borderColor = borderColor?.cgColor
         }
     }
@@ -52,43 +45,6 @@ extension UIView {
     
     class func loadNib() -> Self {
         return loadNib(self)
-    }
-    
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
-    }
-    
-    
-    func snapshotImage() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
-        drawHierarchy(in: bounds, afterScreenUpdates: false)
-        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return snapshotImage
-    }
-    
-    func snapshotView() -> UIView? {
-        if let snapshotImage = snapshotImage() {
-            return UIImageView(image: snapshotImage)
-        } else {
-            return nil
-        }
-    }
-    
-    public func centerHorizontalParent(_ offset: CGFloat = 0) -> UIView {
-        guard let _ = self.superview else {
-            return self
-        }
-        
-        self.center.x = self.frame.size.width / 2 + offset
-        return self
     }
      
 }
@@ -113,6 +69,15 @@ extension CALayer {
             let rect = bounds.insetBy(dx: dx, dy: dx)
             shadowPath = UIBezierPath(rect: rect).cgPath
         }
+    }
+}
+
+extension UIScrollView {
+    func  isNearBottomEdge(edgeOffset: CGFloat = 220.0) -> Bool {
+        guard self.contentSize.height > self.frame.size.height else { return false }
+        let isNearBottomEdge = self.contentOffset.y + self.frame.size.height + edgeOffset > self.contentSize.height
+        print("isNearBottomEdge: \(isNearBottomEdge)")
+        return isNearBottomEdge
     }
 }
 

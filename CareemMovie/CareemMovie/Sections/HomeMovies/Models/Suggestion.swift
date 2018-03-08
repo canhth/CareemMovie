@@ -21,16 +21,26 @@ final class Suggestion: BaseRealmObjectModel, Codable {
         return "id"
     }
     
+    /*  1. Fetch all Suggestion records
+        2. Find the duplicated objects with 'name'
+        3. If objects.count > 10 and no duplicated --> Delete the last one
+        4. If duplicated then update id of the object
+        5. Set new date for an object.
+     */
     func saveLatestSuggestion() {
         let realm = try! Realm()
         let objects = realm.objects(Suggestion.self)
         
-        // Remove last objest
-        let duplicatedObject = objects.filter{ $0.name != self.name }
-        if objects.count > 10 && duplicatedObject.count == 0 {
+        let duplicatedObjects = objects.filter{ $0.name == self.name }
+        
+        if objects.count > 10 && duplicatedObjects.count == 0 {
             objects.last?.delete()
+        } else if duplicatedObjects.count > 0, let object = duplicatedObjects.first {
+            self.id = object.id
         }
-        let object = self.clone() 
+        
+        let object = self.clone()
+        object.created_at = Date()
         object.saveToLocal()
     }
     

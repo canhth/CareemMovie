@@ -31,14 +31,6 @@ final class HomeMoviesViewController: BaseMainViewController {
         return loadingView
     }()
     
-    fileprivate lazy var refreshControl : UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        let attributes = [ NSAttributedStringKey.foregroundColor : UIColor.careemTextColor ] as [NSAttributedStringKey: Any]
-        refreshControl.tintColor = UIColor.careemOrangeColor
-        refreshControl.attributedTitle = NSAttributedString(string: "Reloading...", attributes: attributes)
-        return refreshControl
-    }()
-    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +41,7 @@ final class HomeMoviesViewController: BaseMainViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        super.viewDidLayoutSubviews() 
         tableView.setupHeightHeaderTableViewAutomaticly()
     }
 
@@ -64,30 +56,19 @@ final class HomeMoviesViewController: BaseMainViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = self.view.bounds.width
         
-        // RefreshControl
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
-        
-        refreshControl.rx.controlEvent(.valueChanged)
-            .bind(to: self.homeMoviesViewModel.refreshTrigger)
-            .disposed(by: disposeBag)
-        
-        refreshControl.rx.controlEvent(.valueChanged)       // User pulled down to refresh
-            .map { _ in self.refreshControl.isRefreshing }
-            .filter { $0 == true }
-            .subscribe(onNext: { [unowned self] _ in
-                self.refreshControl.endRefreshing()
-            })
+        // Dismiss keyboard when scroll
+        tableView.rx.contentOffset
+            .subscribe { _ in
+                if self.careemSearchBar.isFirstResponder {
+                    self.careemSearchBar.resignFirstResponder()
+                }
+            }
             .disposed(by: disposeBag)
         
         // For Lazy paging loading
-        tableView.rx
-            .contentOffset
+        tableView.rx.contentOffset
             .flatMap { offset in
-                self.tableView.isNearTheBottomEdge(contentOffset: offset, startLoadingOffset: 50) ? Observable.of() : Observable.empty()
+                self.tableView.isNearBottomEdge() ? Observable.just(()) : Observable.empty()
             }
             .bind(to: homeMoviesViewModel.loadNextPageTrigger)
             .disposed(by: disposeBag)
@@ -103,23 +84,35 @@ final class HomeMoviesViewController: BaseMainViewController {
     fileprivate func setupViewModel() {
         homeMoviesViewModel.setupHomeMovieViewModel(searchTextField: careemSearchBar.rx)
         
-        // For list suggestions
+        // --- For list suggestions ---
         homeMoviesViewModel.suggestionsObservable.subscribe(onNext: { [weak self] (suggestions) in
             self?.setupSuggestionsList(forBeginSearch: suggestions.count > 0)
         }).disposed(by: disposeBag)
         
-        // For loading animation
+        // --- For loading animation ---
         homeMoviesViewModel.isLoadingAnimation.subscribe(onNext: { [weak self] (isLoading) in
             if isLoading { self?.loadingView.startLoadding() }
-            else { self?.loadingView.stopLoadding() }
+            else {  self?.loadingView.stopLoadding() }
         }).disposed(by: disposeBag)
         
-        // For handling error
+        // --- For handling error ---
         homeMoviesViewModel.errorObservable.subscribe(onNext: { (error) in
             Helper.showAlertViewWith(error: error)
         }).disposed(by: disposeBag)
         
-        // Binding for TableView
+        // --- For binding query string ---
+        homeMoviesViewModel.queryString
+            .subscribe(onNext: { [weak self] (query) in
+                self?.careemSearchBar.text = query
+                self?.setupSuggestionsList(forBeginSearch: false)
+            }).disposed(by: disposeBag)
+        
+        // --- For setup result overview infor ---
+        homeMoviesViewModel.moviesResultObservable.subscribe(onNext: { [weak self] (results) in
+            self?.setupLabelResults(keyword: self?.careemSearchBar.text ?? "", results: results.totaResults.description)
+        }).disposed(by: disposeBag)
+        
+        // --- Binding for TableView ---
         homeMoviesViewModel.elements.asObservable()
             .subscribe(onNext: { [weak self] (results) in
                 guard let strongSelf = self else { return }
@@ -137,7 +130,7 @@ final class HomeMoviesViewController: BaseMainViewController {
     }
     
     fileprivate func setupSuggestionsList(forBeginSearch: Bool) {
-        if forBeginSearch { self.view.endEditing(true) }
+        if !forBeginSearch { self.view.endEditing(true) }
         self.containerView.isHidden = false
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.containerView.alpha = forBeginSearch ? 1 : 0
@@ -145,6 +138,11 @@ final class HomeMoviesViewController: BaseMainViewController {
             self.containerView.isHidden = !forBeginSearch
         }
     }
+    
+    fileprivate func setupLabelResults(keyword: String, results: String) {
+        resultsLabel.text = "Found \(results) results by '\(keyword)'"
+    }
+     
 
 }
 

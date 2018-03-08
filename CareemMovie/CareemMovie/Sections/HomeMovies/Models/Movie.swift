@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 
 struct MovieResults: Mappable {
-    var page            : Int!
-    var totaResults     : Int!
-    var totalPages      : Int!
-    var results         : [Movie]!
+    var page            : Int = 0
+    var totaResults     : Int = 0
+    var totalPages      : Int = 0
+    var results         : [Movie] = [Movie]()
 
     init?(map: Map) {}
     
@@ -34,17 +34,19 @@ struct MovieResults: Mappable {
 }
 struct Movie: Mappable {
     var title           : String!
-    var posterPath      : String!
+    var posterPath      : String?
+    var backdropPath    : String?
     var overview        : String!
     var releaseDate     : String!
 
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
-        title               <- map["title"]
-        posterPath         <- map["poster_path"]
-        overview            <- map["overview"]
-        releaseDate        <- map["release_date"]
+        title                <- map["title"]
+        posterPath           <- map["poster_path"]
+        overview             <- map["overview"]
+        releaseDate          <- map["release_date"]
+        backdropPath         <- map["backdrop_path"]
     }
 }
 
