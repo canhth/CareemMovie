@@ -9,6 +9,8 @@
 import Foundation
 import ObjectMapper
 
+
+/// MovieResult Model
 struct MovieResults: Mappable {
     var page            : Int = 0
     var totaResults     : Int = 0
@@ -32,6 +34,9 @@ struct MovieResults: Mappable {
     }
 
 }
+
+
+/// Movie Model
 struct Movie: Mappable {
     var title           : String!
     var posterPath      : String?
@@ -50,7 +55,7 @@ struct Movie: Mappable {
     }
 }
 
-// Type of Poster images
+/// Type of Poster images
 enum ImageSize: String {
     case w92    = "w92"
     case w185   = "w185"

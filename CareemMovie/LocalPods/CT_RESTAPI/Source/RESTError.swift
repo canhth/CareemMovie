@@ -8,7 +8,9 @@
 
 import Foundation
 
+/// Create the Error type
 public enum CTNetworkErrorType: Error {
+    
     public static let kNoNetwork = -1
     public static let kTimeout = -2
     public static let kUnauthorized = 401
@@ -38,8 +40,8 @@ public enum CTNetworkErrorType: Error {
 
 open class RESTError: Codable {
     
-    open var errorFromResponse:  String = ""
-    open var status:         Bool = false
+    open var errorFromResponse: String = ""
+    open var status: Bool = false
     open var HTTP_response_code: Int = 404
     
     private enum ErrorKey: String, CodingKey {
@@ -89,7 +91,9 @@ open class RESTError: Codable {
         return restError
     }
     
-
+    /// Convert RESTError to Error
+    ///
+    /// - Returns: Error object
     open func toError() -> Error {
         return CTNetworkErrorType.errorMessage(code: HTTP_response_code, status: status, message: errorFromResponse)
     }

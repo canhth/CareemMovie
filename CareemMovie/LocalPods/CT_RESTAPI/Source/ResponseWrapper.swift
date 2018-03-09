@@ -14,6 +14,8 @@ import ObjectMapper
 
 public typealias AlamofireDataResponse = DataResponse<Data>
 
+
+/// Response wrapper of Alamofire response
 open class ResponseWrapper : NSObject
 {
     open var response: AlamofireDataResponse?
@@ -30,6 +32,9 @@ open class ResponseWrapper : NSObject
 
 public extension ResponseWrapper {
     
+    /// Map an object to model T for Swift 4
+    ///
+    /// - Returns: T
     public func mappingObject<T>() -> T? where T: Decodable {
         
         var result: T?
@@ -44,6 +49,9 @@ public extension ResponseWrapper {
         return result
     }
     
+    /// Map an object to array model [T] for Swift 4
+    ///
+    /// - Returns: T
     public func mappingArray<T>(_ keyPath: String? = nil) -> [T] where T: Decodable {
 
         var results = [T]()
@@ -62,6 +70,9 @@ public extension ResponseWrapper {
         return results
     }
     
+    /// Map an object to model T for ObjectMapper
+    ///
+    /// - Returns: T
     public func mappingObject<T>(_ keyPath: String? = nil) -> T? where T: Mappable {
         let json: [String: Any]?
         
@@ -80,6 +91,9 @@ public extension ResponseWrapper {
         return result
     }
     
+    /// Map an object to array model T for ObjectMapper
+    ///
+    /// - Returns: [T]
     public func mappingArray<T>(_ keyPath: String? = nil) -> [T] where T: Mappable {
         let arrayJson: JSON
         if let keyPath = keyPath?.components(separatedBy: ".").map({$0 as JSONSubscriptType}) {

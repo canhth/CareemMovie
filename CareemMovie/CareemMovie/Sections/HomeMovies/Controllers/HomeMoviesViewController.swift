@@ -46,6 +46,8 @@ final class HomeMoviesViewController: BaseMainViewController {
     }
 
     //MARK: - Setup views & ViewModel
+    
+    /// Setup all the view components
     fileprivate func setupViews() {
         
         careemSearchController = CareemSearchViewController(searchResultsController: self, searchBar: careemSearchBar)
@@ -129,6 +131,10 @@ final class HomeMoviesViewController: BaseMainViewController {
             }).disposed(by: disposeBag)
     }
     
+    
+    /// Set up the Search Suggestion list view
+    ///
+    /// - Parameter forBeginSearch: is editing or not
     fileprivate func setupSuggestionsList(forBeginSearch: Bool) {
         if !forBeginSearch { self.view.endEditing(true) }
         self.containerView.isHidden = false
@@ -139,15 +145,21 @@ final class HomeMoviesViewController: BaseMainViewController {
         }
     }
     
+    
+    /// Set the label results when results has found
+    ///
+    /// - Parameters:
+    ///   - keyword: query string
+    ///   - results: total results
     fileprivate func setupLabelResults(keyword: String, results: String) {
         resultsLabel.text = "Found \(results) results by '\(keyword)'"
     }
-     
-
+    
 }
 
 // MARK: CareemSearchControllerDelegate
 extension HomeMoviesViewController: CareemSearchControllerDelegate {
+    
     func didTapOnSearchButton() {
         self.setupSuggestionsList(forBeginSearch: false)
         if let query = careemSearchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
@@ -159,3 +171,5 @@ extension HomeMoviesViewController: CareemSearchControllerDelegate {
         self.setupSuggestionsList(forBeginSearch: false)
     }
 }
+
+

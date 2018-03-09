@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+/// An Parameter object for search API
 struct SearchMovieParams: Codable {
     
     var api_key: String = "2696829a81b1b5827d515ff121700838"

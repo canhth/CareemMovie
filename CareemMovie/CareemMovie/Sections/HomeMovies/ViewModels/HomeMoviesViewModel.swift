@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 import CT_RESTAPI
 
+/// Home search ViewModel, based on PaginationNetworkModel
 final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     
     //MARK: - Variables
@@ -25,6 +26,10 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     
     
     //MARK: - Main functions
+    
+    /// Setup View model by listening react of search bar field
+    ///
+    /// - Parameter searchTextField: searchBarField
     func setupHomeMovieViewModel(searchTextField: Reactive<CareemSearchBar>) {
         isLoadingAnimation.onNext(true)
         
@@ -60,7 +65,10 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
             }.share(replay: 1)
     }
     
-    // --- Lazy loading method ---
+    /// Lazy loading method
+    ///
+    /// - Parameter offset: the next page
+    /// - Returns: Observable that we need to triger
     override func loadData(offset: Int) -> Observable<[Movie]> {
         self.isLoadingAnimation.onNext(true)
         searchParam.value.page = offset 
@@ -77,7 +85,9 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     
     //MARK: - Supporting methods
     
-    // --- Setup data of view model after fetched results ---
+    /// Setup data of view model after fetched results
+    ///
+    /// - Parameter results: results was found
     fileprivate func setupModelWithNewResults(results: MovieResults) {
         self.elements.value = results.results
         self.maxOffset = results.totalPages
@@ -85,6 +95,12 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
         self.saveSuggestion(query: self.searchParam.value.query, totalResult: results.totaResults.description)
     }
     
+    
+    /// Save the suggestion after search with keyword successful
+    ///
+    /// - Parameters:
+    ///   - query: query string
+    ///   - totalResult: total results found
     fileprivate func saveSuggestion(query: String, totalResult: String) {
         let suggestion = Suggestion.createSuggestionObject(name: query, totalResult: totalResult)
         suggestion.saveLatestSuggestion()

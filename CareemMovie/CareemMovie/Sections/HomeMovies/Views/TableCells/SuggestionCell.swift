@@ -10,6 +10,7 @@ import UIKit
 
 final class SuggestionCell: UITableViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak private var suggestionNameLabel: UILabel!
     @IBOutlet weak private var resultsLabel: UILabel!
 
@@ -24,6 +25,10 @@ final class SuggestionCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    /// Setup display cell
+    ///
+    /// - Parameter model: suggestion model
     func setupCellWithSuggestion(model: Suggestion) {
         suggestionNameLabel.text = model.name
         resultsLabel.text = "\(model.totalResult) result" + ((Int(model.totalResult) ?? 0) > 1 ? "s" : "")

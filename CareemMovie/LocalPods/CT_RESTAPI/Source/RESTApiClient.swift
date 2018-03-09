@@ -14,13 +14,11 @@ import Alamofire
 import SwiftyJSON
 
 
+/// The main class of CT_RESTAPI
 open class RESTApiClient: NSObject {
     
+    //MARK: - Variables
     public typealias RestAPICompletion = (_ result: Any?, _ error: RESTError?) -> Void
-    public typealias RestDownloadProgress = (_ bytesRead : Int64, _ totalBytesRead : Int64, _ totalBytesExpectedToRead : Int64) -> Void
-    
-    
-    fileprivate var ResultCompletion : (Any?, RESTError?)
     fileprivate var baseUrl: String = ""
     var parameters: [String: Any] = [:]
     fileprivate var headers: [String: String] = RESTContants.headers
@@ -32,10 +30,18 @@ open class RESTApiClient: NSObject {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let acceptableStatusCodes: [Int]
     
-    //MARK: Base
+    //MARK: - Main functions
+    
+    /// Init RESTApiClient object
+    ///
+    /// - Parameters:
+    ///   - subPath: Sub path of API URL
+    ///   - functionName: last func of API URL
+    ///   - method: API method
+    ///   - endcoding: API endcoding
     public init(subPath: String, functionName: String, method : RequestMethod, endcoding: Endcoding) {
         
-        //set base url
+        // Set base url
         baseUrl = RESTContants.kDefineWebserviceUrl + subPath + (functionName.count == 0 ? "" : ("/" + functionName))
         requestBodyType = RESTRequestBodyType.json
         
@@ -73,22 +79,10 @@ open class RESTApiClient: NSObject {
         acceptableStatusCodes = Array(200..<300)
     }
     
-    //MARK: Properties
+    //MARK: - Properties
     open func setQueryParam(_ param: [String: Any]?)
     {
         parameters = param ?? ["" : ""]
-    }
-    
-    open func addQueryParam(_ name: String, value: Any)
-    {
-        if let dataValue = value as? Data
-        {
-            parameters[name] = dataValue as Any?
-        }
-        else
-        {
-            parameters[name] = value
-        }
     }
     
     open func addHeader(_ name: String, value: Any)
@@ -96,12 +90,25 @@ open class RESTApiClient: NSObject {
         headers[name] = String(describing: value)
     }
     
+    //MARK: - Base request
+    
+    /// Request with Decoable object
+    ///
+    /// - Returns: Observable<Decoable>
     open func requestObject<T: Decodable>() -> Observable<T?> {
         return baseRequest().autoMappingObject()
     }
     
+    open func requestObjects<T: CTArrayType>(keyPath: String? = nil) -> Observable<T> where T.Element:  Decodable {
+        let result : Observable<[T.Element]> = baseRequest().autoMappingArray(keyPath)
+        return result.map {$0 as! T}
+    }
+    
+    /// Request with ObjectMapper model
+    ///
+    /// - Parameter keyPath: keyPath of model
+    /// - Returns: Observable<Mappable>
     open func requestObject<T: Mappable>(keyPath: String?) -> Observable<T?> {
-        
         if let keyPath = keyPath {
             return baseRequest().autoMappingObject(keyPath)
         } else {
@@ -119,12 +126,10 @@ open class RESTApiClient: NSObject {
         return result.map {$0 as! T}
     }
     
-    open func requestObjects<T: CTArrayType>(keyPath: String? = nil) -> Observable<T> where T.Element:  Decodable {
-        let result : Observable<[T.Element]> = baseRequest().autoMappingArray(keyPath)
-        return result.map {$0 as! T}
-    }
     
-    
+    /// Base request functions
+    ///
+    /// - Returns: Response wapper steam
     open func baseRequest() -> Observable<ResponseWrapper> {
         return Observable.create { observer -> Disposable in 
             request(self.baseUrl,

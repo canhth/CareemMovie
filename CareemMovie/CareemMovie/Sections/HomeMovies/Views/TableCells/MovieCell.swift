@@ -11,6 +11,7 @@ import Kingfisher
 
 final class MovieCell: UITableViewCell {
 
+    //MARK: - IBOutlets
     @IBOutlet weak fileprivate var posterImageView: UIImageView!
     @IBOutlet weak fileprivate var movieNameLabel: UILabel!
     @IBOutlet weak fileprivate var releaseDateLabel: UILabel!
@@ -18,7 +19,8 @@ final class MovieCell: UITableViewCell {
     @IBOutlet weak fileprivate var containMovieView: UIView!
     
     override func awakeFromNib() {
-        super.awakeFromNib() 
+        super.awakeFromNib()
+        /// Setup shadow for cell
         self.containMovieView.layer.applySketchShadow(color: UIColor.shadowColor, alpha: 0.2, x: 0.5, y: 2, blur: 6, spread: 0)
         self.containMovieView.layer.masksToBounds = false
     }
@@ -27,6 +29,10 @@ final class MovieCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    
+    /// Setup display MovieCell
+    ///
+    /// - Parameter model: Movie model
     func setupMovieCellWithModel(model: Movie) {
         
         movieNameLabel.text = model.title

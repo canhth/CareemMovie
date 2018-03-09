@@ -44,12 +44,23 @@ final class Suggestion: BaseRealmObjectModel, Codable {
         object.saveToLocal()
     }
     
+    
+    /// Get list suggestion for Realm data
+    ///
+    /// - Returns: array of Suggestions
     class func getListSuggestions() -> [Suggestion] {
         let realm = try! Realm()
         let objects = realm.objects(Suggestion.self).sorted(byKeyPath: "created_at", ascending: false)
         return objects.toArray()
     }
     
+    
+    /// Create a new Suggestion object
+    ///
+    /// - Parameters:
+    ///   - name: query name
+    ///   - totalResult: total results found
+    /// - Returns: return the suggestion object
     static func createSuggestionObject(name: String, totalResult: String) -> Suggestion {
         let realm = try! Realm()
         let suggestion = Suggestion()

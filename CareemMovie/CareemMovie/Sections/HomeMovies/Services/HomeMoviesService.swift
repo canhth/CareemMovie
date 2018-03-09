@@ -13,6 +13,11 @@ import CT_RESTAPI
 
 final class HomeMoviesService {
     
+    
+    /// <#Description#>
+    ///
+    /// - Parameter param: <#param description#>
+    /// - Returns: <#return value description#>
     class func getMoviesWithParam(param: SearchMovieParams) -> Observable<MovieResults?> {
         
         let apiManager = RESTApiClient(subPath: "search", functionName: "movie", method: .POST, endcoding: .URL)
@@ -21,6 +26,13 @@ final class HomeMoviesService {
         return apiManager.requestObject(keyPath: nil)
     }
     
+
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - param: <#param description#>
+    ///   - keyPath: <#keyPath description#>
+    /// - Returns: <#return value description#>
     class func getMoviesArrayWithParam(param: SearchMovieParams, keyPath: String) -> Observable<[Movie]> {
         
         let apiManager = RESTApiClient(subPath: "search", functionName: "movie", method: .POST, endcoding: .URL)

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public struct RESTContants {
     
     //MARK: Keys for parser
