@@ -18,8 +18,7 @@ import RxSwift
 
 extension SearchMovieTests {
     
-    // Mock serviece
-    
+    // Mock serviece    
     func testMockResultsWithSuccess() {
 
         viewModel = HomeMoviesViewModel(homeSearchService: MockHomeMoviesService())

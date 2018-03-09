@@ -20,6 +20,34 @@
                ReferencedContainer = "container:CareemMovie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "037244B2204F9D540033C285"
+               BuildableName = "CareemMovieTests.xctest"
+               BlueprintName = "CareemMovieTests"
+               ReferencedContainer = "container:CareemMovie.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "037244BD204F9D540033C285"
+               BuildableName = "CareemMovieUITests.xctest"
+               BlueprintName = "CareemMovieUITests"
+               ReferencedContainer = "container:CareemMovie.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

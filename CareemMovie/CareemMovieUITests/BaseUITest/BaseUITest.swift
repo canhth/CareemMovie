@@ -58,7 +58,7 @@ class BaseUITest: XCTestCase {
     func inputTextToTextField(_ element: XCUIElement, text: String) {
         waitUntilElementExists(element)
         element.tap()
-        element.typeText(text)
+        element.clearAndEnterText(text)
     }
     
 }

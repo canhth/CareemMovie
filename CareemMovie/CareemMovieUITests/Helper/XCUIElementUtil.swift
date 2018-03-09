@@ -18,7 +18,7 @@ extension XCUIElement {
         }
         
         var deleteString: String = ""
-        for _ in stringValue.characters {
+        for _ in 0..<stringValue.count {
             deleteString += "\u{8}"
         }
         self.typeText(deleteString)

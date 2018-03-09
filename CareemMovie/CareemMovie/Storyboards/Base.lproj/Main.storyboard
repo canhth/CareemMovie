@@ -143,6 +143,7 @@
                             <constraint firstAttribute="bottom" secondItem="Zz6-dw-R81" secondAttribute="bottom" id="U4S-78-C7S"/>
                             <constraint firstItem="Zz6-dw-R81" firstAttribute="top" secondItem="HrX-RG-y8z" secondAttribute="top" id="Z1o-hf-0E6"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cqn-y4-FJ1"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Zz6-dw-R81" id="KbT-q6-R6m"/>

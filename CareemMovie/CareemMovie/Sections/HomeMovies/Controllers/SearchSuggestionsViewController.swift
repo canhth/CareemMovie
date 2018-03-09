@@ -29,6 +29,7 @@ class SearchSuggestionsViewController: BaseMainViewController {
         tableView.registerCellNib(SuggestionCell.self)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = self.view.bounds.width
+        tableView.accessibilityIdentifier = "SuggestionsTableView"
     }
     
     func setupSuggestionViewModel() {

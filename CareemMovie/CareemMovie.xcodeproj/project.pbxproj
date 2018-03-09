@@ -53,6 +53,7 @@
 		037DE35F20526E3B00C3C05B /* BaseUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE35C20526E3B00C3C05B /* BaseUITest.swift */; };
 		037DE36020526E3B00C3C05B /* XCUIElementUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE35E20526E3B00C3C05B /* XCUIElementUtil.swift */; };
 		037DE363205272DC00C3C05B /* XCTestExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE362205272DC00C3C05B /* XCTestExpectation.swift */; };
+		037DE36520527EEF00C3C05B /* HomeSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE36420527EEF00C3C05B /* HomeSearchUITests.swift */; };
 		5888D864E1161C96650D0D45 /* Pods_CareemMovieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F683FD7EAB51E203CFE6987 /* Pods_CareemMovieTests.framework */; };
 		D7759200C74BC11E4AEFC9C2 /* Pods_CareemMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7144E3155725074CBE67F443 /* Pods_CareemMovie.framework */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,7 @@
 		037DE35C20526E3B00C3C05B /* BaseUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUITest.swift; sourceTree = "<group>"; };
 		037DE35E20526E3B00C3C05B /* XCUIElementUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCUIElementUtil.swift; sourceTree = "<group>"; };
 		037DE362205272DC00C3C05B /* XCTestExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExpectation.swift; sourceTree = "<group>"; };
+		037DE36420527EEF00C3C05B /* HomeSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchUITests.swift; sourceTree = "<group>"; };
 		298EA76EAA32E07B1D022CC6 /* Pods-CareemMovieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareemMovieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareemMovieTests/Pods-CareemMovieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BEB1773E2D7084412217188 /* Pods-CareemMovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareemMovieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CareemMovieTests/Pods-CareemMovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F683FD7EAB51E203CFE6987 /* Pods_CareemMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareemMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 		037244C1204F9D540033C285 /* CareemMovieUITests */ = {
 			isa = PBXGroup;
 			children = (
+				037DE36620527F2100C3C05B /* HomeSearch */,
 				037DE35B20526E3B00C3C05B /* BaseUITest */,
 				037DE35D20526E3B00C3C05B /* Helper */,
 				037244C2204F9D540033C285 /* CareemMovieUITests.swift */,
@@ -428,6 +431,14 @@
 				037DE362205272DC00C3C05B /* XCTestExpectation.swift */,
 			);
 			path = UnitTestsExtension;
+			sourceTree = "<group>";
+		};
+		037DE36620527F2100C3C05B /* HomeSearch */ = {
+			isa = PBXGroup;
+			children = (
+				037DE36420527EEF00C3C05B /* HomeSearchUITests.swift */,
+			);
+			path = HomeSearch;
 			sourceTree = "<group>";
 		};
 		57FF073EF2308FD4D1D4FF49 /* Pods */ = {
@@ -781,6 +792,7 @@
 			files = (
 				037DE36020526E3B00C3C05B /* XCUIElementUtil.swift in Sources */,
 				037DE35F20526E3B00C3C05B /* BaseUITest.swift in Sources */,
+				037DE36520527EEF00C3C05B /* HomeSearchUITests.swift in Sources */,
 				037244C3204F9D540033C285 /* CareemMovieUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
