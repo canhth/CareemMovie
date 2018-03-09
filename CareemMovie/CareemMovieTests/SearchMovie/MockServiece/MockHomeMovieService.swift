@@ -27,7 +27,7 @@ class MockHomeMoviesService: SearchMovieService {
         if isNeedReturnError {
             let error = RESTError(typeError: .errorMessage(code: 404, status: false, message: "Error of MockHomeMoviesService"))
             completion(nil, error.toError())
-            return Observable.empty()
+            return Observable.just(MovieResults())
         } else {
             var result = MovieResults()
             result.totalPages = 3
@@ -36,23 +36,6 @@ class MockHomeMoviesService: SearchMovieService {
             completion(result, nil)
             return Observable.just(result)
         }
-        
-        
-//            self.getMoviesWithParam(param: param)
-//            .observeOn(MainScheduler.instance)
-//            .catchError({ (error) -> Observable<MovieResults?> in
-//                completion(nil, error as! CTNetworkErrorType)
-//                return Observable.empty()
-//            })
-//            .map { (result) -> MovieResults in
-//                if let value = result, value.totaResults > 0 {
-//                    completion(result, nil)
-//                    return value}
-//                else {
-//                    completion(nil, nil)
-//                    return MovieResults()
-//                }
-//        }
     }
     
     /// Create RESTApiClient

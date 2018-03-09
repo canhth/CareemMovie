@@ -10,6 +10,11 @@ import XCTest
 import RxSwift
 @testable import CareemMovie
 
+/* TEST CASES:
+ 1. Test search with keyword 'Iron man'
+ 2. Test search with next page
+ */
+
 class SearchMovieTests: CareemMovieTests {
     
     // MARK: properties
@@ -20,18 +25,27 @@ class SearchMovieTests: CareemMovieTests {
     
     override func setUp() {
         super.setUp()
-        viewModel = HomeMoviesViewModel(homeSearchService: searchMovieService)
     }
     
-    //MARK: Test cases
-    func testRealResultsWithQuery() {
+    // MARK: Base functions
+    func getResultSuccessWithQuery(query: String, page: Int? = nil) -> MovieResults {
+        viewModel = HomeMoviesViewModel(homeSearchService: searchMovieService)
         
+        var movieResults: MovieResults!
+        
+        // The expectation to wait until got the response from API
         let expectation =  self.expectation(description: "SomeService does stuff and runs the callback closure")
         
-        viewModel.queryString.onNext("Iron man")
         viewModel.setupHomeMovieViewModel()
+        if let page = page {
+            viewModel.page.onNext(page)
+        }
+        viewModel.queryString.onNext(query)
+        
         viewModel.moviesResultObservable.subscribe(onNext: { (results) in
-            print(results)
+            guard let results = results else { return }
+            movieResults = results
+            print("\n\nSearchMovieTests - Found results \(results.totaResults)\n\n")
             expectation.fulfill()
         }).disposed(by: disposeBag)
         
@@ -40,5 +54,20 @@ class SearchMovieTests: CareemMovieTests {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
         }
+        
+        return movieResults
+    }
+    
+    // MARK: Test cases
+    func testGetResultsSuccessWithQueryIronMan() {
+        
+        let movieResults: MovieResults = getResultSuccessWithQuery(query: "Iron man")
+        XCTAssertTrue(movieResults.totaResults > 0)
+    }
+    
+    func testGetResultsSuccessWithNextPageIronMan() {
+        let movieResults: MovieResults = getResultSuccessWithQuery(query: "Iron man", page: 2)
+        
+        XCTAssertTrue(movieResults.totaResults > 0)
     }
 }

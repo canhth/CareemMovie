@@ -59,7 +59,7 @@ open class RESTError: Codable {
         case .unspecified:
             errorFromResponse = "Unspecified"
         default:
-            errorFromResponse = "" 
+            errorFromResponse = "Unknow message" 
         }
     }
     
