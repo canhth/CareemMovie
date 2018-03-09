@@ -33,7 +33,7 @@ final class Suggestion: BaseRealmObjectModel, Codable {
         
         let duplicatedObjects = objects.filter{ $0.name == self.name }
         
-        if objects.count > 10 && duplicatedObjects.count == 0 {
+        if objects.count >= 10 && duplicatedObjects.count == 0 {
             objects.last?.delete()
         } else if duplicatedObjects.count > 0, let object = duplicatedObjects.first {
             self.id = object.id
