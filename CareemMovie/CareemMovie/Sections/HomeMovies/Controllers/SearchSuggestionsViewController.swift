@@ -14,7 +14,7 @@ class SearchSuggestionsViewController: BaseMainViewController {
 
     //MARK: IBOutlets & Variables
     @IBOutlet weak var tableView: UITableView!
-    var homeMoviesViewModel = HomeMoviesViewModel()
+    var homeMoviesViewModel : HomeMoviesViewModel!
     
     fileprivate let disposeBag = DisposeBag()
     

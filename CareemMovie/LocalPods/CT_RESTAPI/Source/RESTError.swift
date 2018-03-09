@@ -48,7 +48,7 @@ open class RESTError: Codable {
         case errorResponse = "message"
     }
     
-    init(typeError : CTNetworkErrorType, status: Bool = false, code: Int = 404) {
+    public init(typeError : CTNetworkErrorType, status: Bool = false, code: Int = 404) {
         switch typeError {
         case .noNetwork:
             errorFromResponse = "No network" //set default string here

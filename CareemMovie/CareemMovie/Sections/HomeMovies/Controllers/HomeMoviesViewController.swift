@@ -21,7 +21,7 @@ final class HomeMoviesViewController: BaseMainViewController {
     
     fileprivate var careemSearchController: CareemSearchViewController!
     fileprivate let disposeBag = DisposeBag()
-    fileprivate let homeMoviesViewModel = HomeMoviesViewModel()
+    fileprivate let homeMoviesViewModel = HomeMoviesViewModel(homeSearchService: HomeMoviesService())
     
     fileprivate lazy var loadingView: LoaddingView = {
         let loadingView = LoaddingView(frame: UIScreen.main.bounds)
@@ -84,7 +84,8 @@ final class HomeMoviesViewController: BaseMainViewController {
     }
     
     fileprivate func setupViewModel() {
-        homeMoviesViewModel.setupHomeMovieViewModel(searchTextField: careemSearchBar.rx)
+        homeMoviesViewModel.setupHomeMovieViewModel()
+        homeMoviesViewModel.setupViewModelForSuggestion(searchTextField: careemSearchBar.rx)
         
         // --- For list suggestions ---
         homeMoviesViewModel.suggestionsObservable.subscribe(onNext: { [weak self] (suggestions) in
@@ -111,7 +112,7 @@ final class HomeMoviesViewController: BaseMainViewController {
         
         // --- For setup result overview infor ---
         homeMoviesViewModel.moviesResultObservable.subscribe(onNext: { [weak self] (results) in
-            self?.setupLabelResults(keyword: self?.careemSearchBar.text ?? "", results: results.totaResults.description)
+            self?.setupLabelResults(keyword: self?.careemSearchBar.text ?? "", results: results?.totaResults.description ?? "0")
         }).disposed(by: disposeBag)
         
         // --- Binding for TableView ---

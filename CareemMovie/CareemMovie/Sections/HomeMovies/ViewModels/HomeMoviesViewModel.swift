@@ -15,9 +15,10 @@ import CT_RESTAPI
 final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     
     //MARK: - Variables
-    fileprivate(set) var moviesResultObservable     : Observable<MovieResults>!
+    fileprivate(set) var moviesResultObservable     : Observable<MovieResults?>!
     fileprivate(set) var suggestionsObservable      : Observable<[Suggestion]>!
     fileprivate(set) var searchParam                : Variable<SearchMovieParams>!
+    fileprivate(set) var homeSearchService          : SearchMovieService!
     fileprivate(set) var errorObservable            = PublishSubject<CTNetworkErrorType>()
     fileprivate(set) var isLoadingAnimation         = PublishSubject<Bool>()
     fileprivate(set) var queryString                = BehaviorSubject<String>(value: "2018")
@@ -27,10 +28,17 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     
     //MARK: - Main functions
     
+    /// Init ViewModel
+    ///
+    /// - Parameter homeSearchService: API service
+    init(homeSearchService: SearchMovieService) {
+        self.homeSearchService = homeSearchService
+    }
+    
     /// Setup View model by listening react of search bar field
     ///
     /// - Parameter searchTextField: searchBarField
-    func setupHomeMovieViewModel(searchTextField: Reactive<CareemSearchBar>) {
+    func setupHomeMovieViewModel() {
         isLoadingAnimation.onNext(true)
         
         let parameter: Observable<SearchMovieParams> = Observable.combineLatest(queryString.asObservable(), page.asObservable()) { (query, page) ->  SearchMovieParams in
@@ -43,20 +51,19 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
         // --- Setup movies results list Observable ---
         moviesResultObservable = parameter.flatMapLatest { (param) -> Observable<MovieResults?> in
             self.isLoadingAnimation.onNext(true)
-            
-            return HomeMoviesService.getMoviesWithParam(param: param)
-                .observeOn(MainScheduler.instance)
-                .catchError({ [weak self] (error) -> Observable<MovieResults?> in
-                    // Handle Error
+            return self.homeSearchService.getMoviesWithParam(param: param, completion: { [weak self] (results, error) in
+                if error != nil {
                     self?.errorObservable.onNext(error as! CTNetworkErrorType)
-                    return Observable.empty()
-                })
-            }.map { [weak self] (result) -> MovieResults in
-                guard let strongSelf = self, let value = result, value.totaResults > 0 else { return MovieResults() }
-                strongSelf.setupModelWithNewResults(results: value)
-                return value
-            }.share(replay: 1)
+                } else {
+                    self?.setupModelWithNewResults(results: results)
+                }
+            })
+            .share(replay: 1)
+        }
         
+    }
+    
+    func setupViewModelForSuggestion(searchTextField: Reactive<CareemSearchBar>) {
         // --- Setup suggestions Observable list ---
         suggestionsObservable = searchTextField.textDidBeginEditing
             .asObservable()
@@ -88,11 +95,12 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
     /// Setup data of view model after fetched results
     ///
     /// - Parameter results: results was found
-    fileprivate func setupModelWithNewResults(results: MovieResults) {
-        self.elements.value = results.results
-        self.maxOffset = results.totalPages
+    fileprivate func setupModelWithNewResults(results: MovieResults?) {
+        guard let value = results, value.totaResults > 0 else { return }
+        self.elements.value = value.results
+        self.maxOffset = value.totalPages
         self.isLoadingAnimation.onNext(false)
-        self.saveSuggestion(query: self.searchParam.value.query, totalResult: results.totaResults.description)
+        self.saveSuggestion(query: self.searchParam.value.query, totalResult: value.totaResults.description)
     }
     
     
