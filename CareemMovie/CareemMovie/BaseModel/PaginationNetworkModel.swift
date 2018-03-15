@@ -43,7 +43,7 @@ class PaginationNetworkModel<T1: Mappable>: NSObject {
         let nextPageRequest = loading.asObservable()
             .sample(loadNextPageTrigger)
             .flatMap { [unowned self] loading -> Observable<Int> in
-                if loading && (self.offset >= self.maxOffset) {
+                if loading || (self.offset >= self.maxOffset) {
                     return Observable.empty()
                 } else {
                     

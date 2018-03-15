@@ -51,6 +51,8 @@ final class HomeMoviesViewModel: PaginationNetworkModel<Movie> {
         // --- Setup movies results list Observable ---
         moviesResultObservable = parameter.flatMapLatest { (param) -> Observable<MovieResults?> in
             self.isLoadingAnimation.onNext(true)
+            // Refresh trigger
+            self.loading.value = false
             return self.homeSearchService.getMoviesWithParam(param: param, completion: { [weak self] (results, error) in
                 if error != nil {
                     self?.errorObservable.onNext(error as! CTNetworkErrorType)
