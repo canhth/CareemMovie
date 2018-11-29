@@ -114,22 +114,14 @@ final class HomeMoviesViewController: BaseMainViewController {
         homeMoviesViewModel.moviesResultObservable.subscribe(onNext: { [weak self] (results) in
             self?.setupLabelResults(keyword: self?.careemSearchBar.text ?? "", results: results?.totaResults.description ?? "0")
         }).disposed(by: disposeBag)
-        
+         
         // --- Binding for TableView ---
-        homeMoviesViewModel.elements.asObservable()
-            .subscribe(onNext: { [weak self] (results) in
-                guard let strongSelf = self else { return }
-                strongSelf.tableView.dataSource = nil
-                strongSelf.tableView.delegate = nil
-                
-                Observable.just(results)
-                    .bind(to: strongSelf.tableView.rx
-                                                .items(cellIdentifier: "MovieCell")) { (index, model: Movie, cell) in
-                                                    if let cell: MovieCell = cell as? MovieCell {
-                                                        cell.setupMovieCellWithModel(model: model)
-                                                    }
-                    }.disposed(by: strongSelf.disposeBag)
-            }).disposed(by: disposeBag)
+        homeMoviesViewModel.elements.asObservable().bind(to: tableView.rx
+            .items(cellIdentifier: "MovieCell")) { (index, model: Movie, cell) in
+                if let cell: MovieCell = cell as? MovieCell {
+                    cell.setupMovieCellWithModel(model: model)
+                }
+            }.disposed(by: disposeBag)
     }
     
     
